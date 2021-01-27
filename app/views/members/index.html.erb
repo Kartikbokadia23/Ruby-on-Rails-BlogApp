@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+
+<center>
+<h1>Members</h1>
+</br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Role</th>
+      <th scope="col">Address</th>
+      <th scope="col">Contact</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr scope = "row">
+        <td><%= member.name %></td>
+        <td><%= member.email %></td>
+        <td><%= member.age %></td>
+        <td><%= member.role.name %></td>
+        <td><%= member.address %></td>
+        <td><%= member.contact %></td>
+        <td><%= link_to 'Show', member, class: "btn btn-outline-info btn-sm"  %></td>
+        <td><%= link_to 'Edit', edit_member_path(member), class: "btn btn-outline-success btn-sm"  %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_member_path,class: "btn btn-primary text-white" %>
+</center>

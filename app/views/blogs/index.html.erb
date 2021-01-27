@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+<center>
+<% if false %>
+
+<h1>Blogs</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Read time</th>
+      <th scope="col">Image</th>
+      <th scope="col">Body</th>
+      <th scope="col">Category</th>
+      <th scope="col" >Member</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr scope = "row">
+        <td><%= blog.title %></td>
+        <td><%= blog.read_time %></td>
+        <td><%= blog.image %></td>
+        <td><%= blog.body %></td>
+        <td><%= blog.category.name %></td>
+        <td><%= blog.member.name %></td>
+        <td><%= link_to 'Show', blog, class: "btn btn-outline-info btn-sm"  %></td>
+        <% if current_member.role.name == "Admin" or current_member.id == blog.member_id %>
+        <td><%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-outline-success btn-sm" %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>
+<div class = "blog-container container col-12 pt-3 min-vh-100">
+<h1>Blogs</h1>
+</br>
+</br>
+<div class = "blogcard">
+
+<% @blogs.each do |blog| %>
+
+<div class = "cards mb-5 pt-3 pb-3 px-3">
+<p>Title : <%= blog.title %></p>
+<p>Category : <%= blog.category.name %></p>
+<p class="blog-image"><%= image_tag blog.image_url, class: "blog-image" %></p>
+<p>By : <%= blog.member.name %></p>
+<%= link_to 'Show', blog, class: "btn btn-outline-info btn-sm"  %>
+<% if current_member.role.name == "Admin" or current_member.id == blog.member_id %>
+<%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-outline-success btn-sm" %>
+<%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %>
+<%end%>
+</div>
+<% end %>
+
+</div>
+<%= link_to 'New Blog', new_blog_path,class: "btn btn-primary text-white" %>
+</div>
+
+
+</center>
