@@ -1,0 +1,28 @@
+// Place all the styles related to the blogapp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.blogapp{
+    display: flex;
+    justify-content: space-between;
+    margin: 33px;
+}
+
+.blogapp_header{
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.header{
+    text-decoration: none;
+    color: rgb(75, 72, 72);
+}
+
+.blogapp_logout{
+    font-size: 15px;
+}
+
+.blogapp_links{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}

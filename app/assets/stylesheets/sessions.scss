@@ -1,0 +1,60 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+//@import "bootstrap";
+
+.login-form{
+    background: linear-gradient(135deg,#3f5efb, #fc466b);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0!important
+  }
+  .form-input-1{
+    border-radius: 13px;
+    outline: none;
+    border: none;
+    background: #21252924;
+    color: white;
+  }
+  .form-input-2{
+    border-radius: 13px;
+    outline: none;
+    border: none;
+    background: #21252924;
+    color: white;
+  }
+  .form-label{
+    color: #0c2d50;
+  }
+  
+  .form-input-1:active,.form-input-2:active,
+  .form-input-1:focus,.form-input-2:focus{
+    background: #00000036;
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.5);
+    color: white;
+  }
+  
+  .form-input-1:hover,.form-input-2:hover{
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.5);
+    color: white;
+  }
+  
+  .form-btn{
+    width: 20%;
+    height: 35px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    background: #9a46ca;
+    color: rgb(255, 255, 255);
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+  }
+  

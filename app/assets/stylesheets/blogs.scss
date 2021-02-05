@@ -1,0 +1,47 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.blogcard{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .cards{
+    flex-basis: 21%;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, .3);
+    position: relative;
+    transition: all .25s ease;
+  }
+  
+  .cards:hover{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, .7);
+  }
+  
+  .title{
+    color: #0c2d50;
+    font-weight: 600;
+  }
+  
+  .cards p:last-child{
+    font-size: 15px;
+    color: #164981;
+    font-weight: 500;
+  }
+  
+  .blog-container{
+    background: linear-gradient(135deg,#3f5efb, #fc466b);
+    height: 100vh;
+  }
+  
+  .blog-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 60px;
+    transform: translate(25%, -25%);
+    border-radius: 50%;
+  }
