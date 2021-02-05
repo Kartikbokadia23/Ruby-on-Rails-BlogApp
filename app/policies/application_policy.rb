@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationPolicy
   attr_reader :member, :record
 
@@ -5,8 +7,6 @@ class ApplicationPolicy
     @member = member
     @record = record
   end
-
-
 
   def index?
     false

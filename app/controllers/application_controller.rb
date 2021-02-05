@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     include SessionsHelper
     include Pundit
-    before_action :authenticate,:current_user
+    before_action :authenticate, :current_user
     protect_from_forgery with: :exception
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
     
@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
             return head 404
         end
     end
+
 
     def current_user
         @current_user = current_member
