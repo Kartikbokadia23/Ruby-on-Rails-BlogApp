@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
       session[:auth_token] = @member.token
       @member.save
       log_in @member
-      redirect_to blogapp_index_path
+      redirect_to blogs_path
+      #render(:template => "/Users/kartikbokadia/Documents/projects/blogapp/app/views/layouts/index.html.erb")
     else
       # Create an error message.
       flash[:danger] = 'Invalid email/password combination'

@@ -14,18 +14,42 @@
   <div class = "blogapp">
 
 <div class = "blogapp_header">
-  <%= link_to "BlogApp" , blogapp_index_path , class: "header" %>
+  <%= link_to "BlogApp" , blogs_path , class: "header" %>
 </div>
+
+
 <% if current_member != nil %>
+<div class = "blogapp_links">
+<%if current_member.role.name == "Admin" %>
+<%= link_to 'Members' , members_path %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to 'Category' , categories_path %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%end%>
+<%= link_to 'Blogs' , blogs_path %>
+</div>
+
+
 <div class = "blogapp_logout">
 <%= current_member.name %>
 &nbsp;
   <%= link_to "Log out", logout_path, method: "delete", class: "log_out" %> 
-  
-
 </div>
 <% end %>
 </div>
+
+
+<% if current_member != nil %>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+</br>
+</br>
+</br>
+<% end %>
+
     <%= yield %>
   </body>
 </html>

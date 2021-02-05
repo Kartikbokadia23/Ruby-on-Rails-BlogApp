@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
     before_action :authenticate, :current_user
     protect_from_forgery with: :exception
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+    def index;end
     
     def authenticate
         request.headers['access-token'] = current_member.token if current_member != nil
@@ -24,7 +26,7 @@ class ApplicationController < ActionController::Base
 
     def user_not_authorized
         flash[:alert] = "You are not authorized to perform this action."
-        redirect_to blogapp_index_path
+        redirect_to blogs_path
     end
 
 end
