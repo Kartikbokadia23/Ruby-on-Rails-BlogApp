@@ -40,4 +40,6 @@
  
  ##### rails db:migrate - to setup database
  
+ ##### npm install - for all the node module dependencies
+ 
  ##### rails server - to start the server and enjoy the app
